@@ -181,3 +181,124 @@ https://github.com/Errante-Creation/coursgithub2024
 - Dans l'un de vos dépôts, ajoutez un nouveau fichier (.js, .html, .autre, on s'en fiche).
 - Une fois le fichier ajouté, publiez la modification sur GitHub (votre dépôt doit avoir le fichier).
 - Débrouillez-vous ensuite pour supprimer le fichier que vous venez d'ajouter et répercuter la suppression sur votre dépôt GitHub.
+
+
+# Écrire un bon message de commit
+
+Écrire un bon message de commit est essentiel pour la maintenance et la compréhension d'un projet. Cela aide à suivre l'évolution du projet et à comprendre les raisons derrière chaque modification.
+
+## Structure d'un message de commit
+
+Un message de commit se compose généralement de 2 parties :
+- Un titre (en-tête) : une brève description des modifications. Doit être concis et ne pas dépasser les 50 caractères. Commence par une majuscule.
+- Un corps qui donne des détails supplémentaires sur les modifications. Il est séparé du titre par une ligne blanche.
+
+### Exercice
+
+- Dans l'un de vos dépôts, ajoutez un nouveau fichier (.js, .html, .autre, on s'en fiche).
+- Une fois le fichier ajouté, publiez la modification sur GitHub (votre dépôt doit avoir le fichier).
+- Débrouillez-vous ensuite pour supprimer le fichier que vous venez d'ajouter et répercuter la suppression sur votre dépôt GitHub.
+
+# CAS DE FIGURES
+
+Machine nomade (portable) et un desktop.
+Changement de machine.
+
+Il faut avoir accès à la dernière version du code, récupérer, cloner, et ensuite modifier et envoyer.
+
+# Récupérer votre travail
+
+Pour récupérer votre travail sur une autre machine, ou simplement récupérer la dernière version en date, vous devez utiliser la commande git clone URL_DU_REPO.
+
+Par exemple : git clone https://github.com/Errante-Creation/coursgithub2024.git
+
+# PR (Pull Request)
+
+C'est une fonctionnalité clé des systèmes de gestion de version basés sur git comme GitHub, GitLab, Bitbucket. Elle représente une demande de fusion de modifications (commits) d'une branche vers une autre, généralement de la branche d'une fonctionnalité vers la branche principale d'un projet.
+
+Les recruteurs sont habitués à GitHub, GitLab.
+
+## Concept de la Pull Request (PR)
+
+**Collaboration et revue de code**
+
+La PR n'est pas seulement un mécanisme de fusion de code : c'est aussi un outil de collaboration. Lorsqu'un dev soumet une PR, d'autres membres de l'équipe peuvent la consulter, laisser des commentaires, suggérer des modifs, et même proposer des commits pour améliorer la PR avant qu'elle ne soit fusionnée.
+
+**Point de contrôle**
+
+Avant la fusion, la PR fournit un point de contrôle pour s'assurer que le code respecte les qualités, passe tous les tests, et n'introduit pas de régressions.
+
+**Intégration avec CI/CD (Continuous Integration/Continuous Deployment)**
+
+Les PR sont souvent intégrées avec des outils d'intégration continue (CI) et de déploiement continu (CD). Lorsqu'une PR est soumise, des tests automatisés peuvent être déclenchés et le résultat de ces tests est souvent signalé directement dans l'interface de la PR. Automatiser le déploiement et respecter la qualité du code efficacement.
+
+## Faire une PR
+
+### Fork du repository
+
+Avant de pouvoir soumettre une PR, vous devez avoir une copie du repository sur votre compte : si ce n'est pas déjà fait :
+1. Allez sur la page GitHub du projet auquel vous voulez contribuer.
+2. Cliquez sur "fork" pour créer un fork sur votre page personnelle, cela fera une copie du projet sur votre compte GitHub.
+
+### Cloner le fork
+
+Après avoir fait un fork, vous allez pouvoir travailler dessus. Pour cela, vous allez devoir cloner sur votre propre machine.
+
+```bash
+git clone URL_DU_DEPOT (attention, c'est VOTRE repo)
+
+Par exemple :
+
+bash
+Copy code
+git clone https://github.com/Errante-Creation/coursgithub2024.git
+Créer une nouvelle branche
+Il est conseillé de créer une nouvelle branche pour chaque fonctionnalité ou correction. Cela vous permet de garder le travail organisé et séparé.
+
+Pour créer une nouvelle branche, vous devez utiliser la commande :
+
+bash
+Copy code
+git checkout -b nomDeLaNouvelleBranche
+Par exemple :
+
+bash
+Copy code
+git checkout -b interfaceGUI
+ou
+
+bash
+Copy code
+git checkout -b search
+Apporter les modifications
+Modifiez le ou les fichiers nécessaires et ajoutez-les à l'index (avec git add nom_du_fichier ou git add *).
+
+Ensuite, faites un commit de vos modifications :
+
+bash
+Copy code
+git commit -m "descdesmodifications"
+Pousser la branche vers le fork
+bash
+Copy code
+git push origin nom_de_la_branche
+Par exemple :
+
+bash
+Copy code
+git push origin search
+Créer la PR
+Allez sur la page GitHub de votre fork.
+Cliquez sur le bouton "New PR".
+Sélectionnez votre nouvelle branche dans le menu déroulant "compare".
+Assurez-vous que la branche de base (main) est celle du projet ORIGINAL et non celle de votre fork.
+Vérifiez les modifications et cliquez sur "Create Pull Request".
+Donnez un titre à votre PR et décrivez les modifications ou les raisons de votre PR.
+Cliquez sur "Create PR" pour soumettre votre PR.
+Exercice PR
+Rendez-vous sur ce repo :
+Fork du repo
+Faites un clone du repo
+Ajoutez un fichier votreprenom.md
+Envoyez le fichier sur votre repo
+Faites une PR
