@@ -1,0 +1,1 @@
+let favoriteBeverage = true;
