@@ -1,1 +1,0 @@
-const victim = "I'm Kenny";
