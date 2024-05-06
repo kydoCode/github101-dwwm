@@ -1,1 +1,0 @@
-let normalCoffeeDosisPerDay = 8;
